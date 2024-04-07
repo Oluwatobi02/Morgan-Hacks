@@ -7,16 +7,16 @@ const Navbar = ()=> {
     <nav>
         <ul>
             <li>
-                <a></a>
+                <a>Change Role</a>
             </li>
             <li>
-                <a ></a>
+                <a > Summary</a>
             </li>
             <li>
-                <a></a>
+                <a>Next Steps</a>
             </li>
             <li>
-                <a></a>
+                <a>FeedBack</a>
             </li>
         </ul>
     </nav>
