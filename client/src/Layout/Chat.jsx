@@ -48,7 +48,13 @@ const Chat = () => {
 
     return (
     <>
-        <div className="chat">
+        <motion.div 
+            initial={{scale:0}}
+            animate={{scale: [0,1,1.5,1]}}
+            transition={{duration:1}}
+        className="chat">
+            <div style={{fontSize:"20px", color:"#405cf5", fontWeight:"bolder"}}>FastTrack</div>
+            
             <div className="bot-message">
             <span>{header}</span>
             </div> 
@@ -74,16 +80,16 @@ const Chat = () => {
 
                 <button className="chatbtn" onClick={handleClick}>Send</button>
             </div>
-        </div>
+        </motion.div>
         {showNext === true? <button className="chatbtn">Next</button> : ''}
-            <Link to='/'><motion.button
+            {/* <Link to='/'><motion.button
                 initial={{scale:0}}
                 animate={{scale: [0,1,1,1]}}
                 transition={{ duration: 2, delay: 0.5 }} className="homebtn"
                 >
               Get Started
                 
-                </motion.button></Link>
+                </motion.button></Link> */}
         </>
     );
 };
