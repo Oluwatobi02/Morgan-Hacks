@@ -46,7 +46,8 @@ const Chat = () => {
 
 
 
-    return (<>
+    return (
+    <>
         <div className="chat">
             <div className="bot-message">
             <span>{header}</span>
@@ -75,6 +76,14 @@ const Chat = () => {
             </div>
         </div>
         {showNext === true? <button className="chatbtn">Next</button> : ''}
+            <Link to='/'><motion.button
+                initial={{scale:0}}
+                animate={{scale: [0,1,1,1]}}
+                transition={{ duration: 2, delay: 0.5 }} className="homebtn"
+                >
+              Get Started
+                
+                </motion.button></Link>
         </>
     );
 };
