@@ -1,7 +1,7 @@
 from openai import OpenAI
 import json
 
-client = OpenAI(api_key="")
+client = OpenAI()
 def generate_advice(question):    
 
 
