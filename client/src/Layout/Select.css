@@ -1,0 +1,39 @@
+/* .container{
+    background-color: #fff;
+    border-radius: 25px;
+    height: 400px;
+    padding: 20px;
+    justify-content: center;
+
+
+} */
+.Opener{
+    font-size: 60px;
+    color: #7871f7;;
+}
+
+.subtext{
+    font-size: 25px;
+}
+
+.Majors{
+    gap: 15px
+}
+
+.major{
+    
+    background-color: #2f27ce;
+    justify-content: center;
+    font-size: 16px;
+    border-radius:10px;
+    padding: auto;
+    width: 160px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    outline: none;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    
+    border-width: 0;
+}

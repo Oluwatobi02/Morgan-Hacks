@@ -18,7 +18,7 @@ const Chat = () => {
             <div className="messagebox">
     
                 <input className="textbox" 
-                        type="text"  s
+                        type="text"  
                         style={ { color:"black" }  } 
                         />
 
