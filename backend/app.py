@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from aimodel import generate_advice
 
 app = Flask(__name__)
 CORS(app)
@@ -18,6 +19,11 @@ def send_audio():
     audio.save(file_name)
     
     
+@app.route('/advice', methods=['POST'])
+def get_advice():
+    question = request.json['question']
+    advice = generate_advice(question)
+    return jsonify({'result': advice})
 
 
 
