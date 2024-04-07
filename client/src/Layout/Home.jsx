@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {Link} from 'react-router-dom';
 import './home.css';
 
 const Home = () => {
@@ -23,13 +24,14 @@ const Home = () => {
             >
                 Fasttrack your career
             </motion.p>
-            <motion.button
+            <Link to='/chat'><motion.button
                 initial={{scale:0}}
                 animate={{scale: [0,1,1,1]}}
-                transition={{ duration: 2, delay: 0.5 }} className="homebtn">
-                Get Started
+                transition={{ duration: 2, delay: 0.5 }} className="homebtn"
+                >
+              Get Started
                 
-                </motion.button>
+                </motion.button></Link>
         </div>
     );
 };
