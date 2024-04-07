@@ -6,7 +6,7 @@ const Timeline = () => {
   return (
     <>
     <div className='Maincon'>
-    <h3 className='Title'>Roadmamp</h3>
+    <h3 className='Title'>Roadmap</h3>
     <hr className='hr' />
     <motion.div 
     
