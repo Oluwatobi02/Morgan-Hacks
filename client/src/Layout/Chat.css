@@ -12,7 +12,9 @@
     outline: none;
     
 }
-
+.chat-response {
+    height: 300px;
+}
 .chatbtn{
     appearance: button;
     backface-visibility: hidden;
