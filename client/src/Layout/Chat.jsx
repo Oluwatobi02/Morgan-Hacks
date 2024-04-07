@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import './Chat.css';
+import { Link } from "react-router-dom";
+
 
 const Chat = () => {
     const [header, setHeader] = useState('How do you feel about your current major do you think it matches your strength and weaknesses?')
@@ -75,13 +77,20 @@ const Chat = () => {
                 <button className="chatbtn" onClick={handleClick}>Send</button>
             </div>
         </div>
-        {showNext === true? <button className="chatbtn">Next</button> : ''}
+        {showNext === true? <Link to='/majors'><motion.button
+                initial={{scale:0}}
+                animate={{scale: [0,1,1,1]}}
+                transition={{ duration: 2, delay: 0.5 }} className="homebtn"
+                >
+              Next
+                
+                </motion.button></Link> : ''}
             <Link to='/'><motion.button
                 initial={{scale:0}}
                 animate={{scale: [0,1,1,1]}}
                 transition={{ duration: 2, delay: 0.5 }} className="homebtn"
                 >
-              Get Started
+              Back
                 
                 </motion.button></Link>
         </>
