@@ -8,3 +8,6 @@ major_collection = db_name['majors']
 #     fields: Array of type major_fields,
 #     description: String,
 # }
+
+
+
