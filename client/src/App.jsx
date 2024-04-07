@@ -8,7 +8,9 @@ function App() {
   
 
   return (
-    <Chat/>
+    
+    <Home />
+    // <Chat/>
     // <AudioTest />
 
   )
