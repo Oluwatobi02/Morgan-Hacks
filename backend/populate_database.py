@@ -15,8 +15,8 @@ major_fields = {
         ]
 }
 jobs = {
-    'name': 'machine learning engineer',
-    'description': 'i make',
+    'name': 'teacherr',
+    'description': 'i teach',
     'interview_questions': [
         {'id': 1, 'question': 'question', 'generate': False},
         {'id': 2, 'question': 'question', 'generate': False}
@@ -27,6 +27,7 @@ jobs = {
 from job_database import job_collection
 def add_jobs(jobs):
     job_collection.insert_one(jobs)
+add_jobs(jobs)
 
 from majors_database import major_collection
 def add_major_fields(major_fields):
