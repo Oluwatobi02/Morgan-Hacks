@@ -78,6 +78,7 @@ const Chat = () => {
                         style={ { color:"black" }  } 
                         onChange={ handleChange}
                         value={response}
+                        required
                         />
 
                 <button className="chatbtn" onClick={handleClick}>Send</button>

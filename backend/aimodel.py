@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 def generate_advice(question):    
 
 
@@ -23,6 +23,88 @@ def generate_advice(question):
     )
     return response.choices[0].message.content
 
+def get_next_question(major, job, text):    
+    prompt = f"please use the internship interview question to get the next question to ask the interviewee for a {job} which is in the {major} area, also give a feedback on the previous question with ways to improve, return it as a json object: feedback:, next_question, knowledge, clarity, confidence. the interview question is and the interviewee's answer is {text}"
+
+
+    interview_question = [
+        {
+            "name": "get_next_question",
+            "description": "generate next question based on the previous answer and provide a feedback on the previous question with how to improve",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "next_question": {
+                        "type": "string",
+                        "description": "the next question to ask the interviewee based on their input",
+                    },
+                    "feedback": {
+                        "type": "string",
+                        "description": "provide strong feedback on the previous answer and ways to improve",
+                    },
+                    "knowledge": {
+                        "type": "number",
+                        "description": "score them on their knowledge of the subject matter from 0 - 100"
+                    },
+                    "confidence": {
+                        "type": "number",
+                        "description": "score them on their confidence in their answer and articulation from 0 - 100" 
+                    },
+                    "clarity": {
+                        "type": "number",
+                        "description": "score them on their clarity in their answer and articulation from 0 - 100"
+                    }
+                },
+            },
+        },
+    ]
+
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {
+                "role": "system",
+                "content": "you are a senior interviewer and you'll be interviewing potential interns for any field i give you and everything i ask will be as if i'm in an interview. get your math skills up"
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        functions=interview_question,
+    )
+    return response.choices[0].message.content
+
+
+
+
+
+
+def generate_text(file_name):
+    import time
+    from rev_ai import apiclient
+
+    # create your client
+    filePath = file_name
+    token = "02OXoLXfKj0-pGl7SA11NG72BvG_IXxF-0foD-99-uRK_jV8MFev_nhGFjlc1Hn8GvNlVPhluiubBtQE5int-BSlrfz68"
+
+    client = apiclient.RevAiAPIClient(token)
+
+    # send a local file
+    job = client.submit_job_local_file(filePath)
+
+    # check job status
+    job_details = client.get_job_details(job.id)
+
+    # wait for job to complete
+    while job_details.status != 'transcribed':
+        print('Job is still in progress, waiting...')
+        time.sleep(5)
+        job_details = client.get_job_details(job.id)
+
+    transcript_text = client.get_transcript_text(job.id)
+
+    return transcript_text
 
 
 

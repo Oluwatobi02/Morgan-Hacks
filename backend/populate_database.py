@@ -1,40 +1,43 @@
 major = {
-    'major': '',
+    'major': 'Business',
     'fields': [],
-    'description': 'Criminal justice is the delivery of justice to those who have committed crimes. The criminal justice system is a series of government agencies and institutions. Goals include the rehabilitation of offenders, preventing other crimes, and moral support for victims. The primary institutions of the criminal justice system are the police, prosecution and defense lawyers, the courts and prisons.'
+    'description': 'Business is a broad field that encompasses a wide range of disciplines, including finance, marketing, management, and accounting. A degree in business can open up a variety of career opportunities in both the public and private sectors. Business graduates are in high demand in today\'s job market, as they possess the skills and knowledge needed to succeed in a fast-paced and competitive business environment.',
       }
+
+
 major_fields = {
-    'name': 'Software Engineer',
-    'jobs': [], 
-    'description': 'A software engineer is a professional responsible for designing, developing, and maintaining software systems. They analyze user requirements, design software solutions, write code, and test and debug software to ensure it meets quality standards. Additionally, software engineers often collaborate with other team members, such as designers and project managers, to deliver successful software projects on time and within budget.',
-    'resources': ['https://www.geeksforgeeks.org/', 'https://www.w3schools.com/', 'https://www.freecodecamp.org/'],
-    'skills': ['Programming Efficiency', 'Problem Solving Skills', 'Collaboration and Cooperation'],
+    'name': 'Markerting',
+    'jobs': [],
+    'description': 'Marketing is the process of promoting and selling products or services. It involves market research, advertising, and sales. Marketing professionals work in a variety of industries, including retail, healthcare, and technology. A degree in marketing can lead to a career in advertising, public relations, or market research.',
+    'resources': ['American Marketing Association', 'MarketingProfs'],
+    'skills': ['Communication', 'Creativity', 'Analytical Thinking'],
     'target_companies': [
-        {'name': 'Narmi', 'description': 'Narmi specializes in digital banking software engineering for credit unions and community banks, delivering tailored, secure, and user-friendly digital banking platforms. Their team creates innovative features, ensures robust security, and optimizes performance to enhance the banking experience for customers while meeting regulatory standards.'},
-        {'name': 'Gusto', 'description': 'Gusto specializes in cloud-based HR and payroll software for small businesses. Their engineering team develops intuitive platforms to streamline payroll, benefits, and compliance management, prioritizing user experience and data security.'}
-        ]
-}
-jobs = {
-    'name': 'teacherr',
-    'description': 'i teach',
-    'interview_questions': [
-        {'id': 1, 'question': 'question', 'generate': False},
-        {'id': 2, 'question': 'question', 'generate': False}
-                            ],
+        {'name': 'Procter & Gamble', 'description': 'Procter & Gamble is an American multinational consumer goods corporation headquartered in Cincinnati, Ohio, founded in 1837 by William Procter and James Gamble. It specializes in a wide range of personal health/consumer health, and personal care and hygiene products; these products are organized into several segments including Beauty; Grooming; Health Care; Fabric & Home Care; and Baby, Feminine, & Family Care.'},
+        {'name': 'Coca-Cola', 'description': 'The Coca-Cola Company is an American multinational beverage corporation incorporated under Delaware\'s General Corporation Law and headquartered in Atlanta, Georgia. The Coca-Cola Company has interests in the manufacturing, retailing, and marketing of nonalcoholic beverage concentrates and syrups.'}
+    ]
 }
 
+jobs = {
+    'name': 'Astrophysics',
+    'description': 'act like its a Astrophysics internship job and demo real life scenario questions',
+    'interview_questions': [
+        {'question': 'What is your experience with Astrophysics?', 'generate': False},
+        {'question': 'Can you explain the difference between a star and a planet?', 'generate': False},
+        {'question': 'How do you evaluate the performance of a machine learning model?', 'generate': True}
+    ]
+}
 
 from job_database import job_collection
 def add_jobs(jobs):
     job_collection.insert_one(jobs)
-
+add_jobs(jobs)
 from majors_database import major_collection
 def add_major(major):
     major_collection.insert_one(major)
-
+# add_major(major)
 
 from majorfield_database import majorfield_collection
 def add_major_fields(major_fields):
     majorfield_collection.insert_one(major_fields)
 
-add_major_fields(major_fields)
+# add_major_fields(major_fields)
