@@ -1,2 +1,0 @@
-# Morgan-Hacks
-# gathering research
