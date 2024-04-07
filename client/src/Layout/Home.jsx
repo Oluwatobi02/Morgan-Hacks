@@ -13,7 +13,7 @@ const Home = () => {
                 animate={{ x: 0, opacity: 1 }} // Animation properties
                 transition={{ duration: 1 }} // Animation duration
             >
-                <h1 className="2nd-Header">Welcome to</h1>
+                <h1 className="second-Header">Welcome to</h1>
                 <h1 className="Excelerate">FastTrack</h1>
             </motion.div>
             {/* Animate the paragraph */}

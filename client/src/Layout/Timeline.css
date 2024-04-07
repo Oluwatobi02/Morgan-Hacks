@@ -3,14 +3,15 @@
     gap:25px;
     padding: 5px;
     justify-self: center;
-    margin-left: 50px;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 .Card{
     height: 400px;
     width: 280px;
-    color:black;
+    color:#050315;
     border-radius: 10px;
-    background-color:#fff;
+    background-color:#dedcff;
     
 }
 
@@ -28,7 +29,38 @@ h3{
     font-size: 40px;
     justify-self: center;
     padding-bottom: 25px;
-    color: #2f27ce;
-    
+    color:#2f27ce;
 }
 
+.btn{
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    margin-top: 10px;
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer; 
+}
+
+.hr{
+    width: 90%;
+}
+
+.Maincon{
+    padding: 8px;
+    background-color:#fff;
+    border-radius: 10px;
+}
