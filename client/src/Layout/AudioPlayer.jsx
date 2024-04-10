@@ -1,12 +1,19 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import WebcamComponent from './WebcamComponent';
+import ShownData from '../components/shownData';
 
 const AudioPlayer = () => {
     const [isRecording, setIsRecording] = useState(false);
     const [recordedChunks, setRecordedChunks]  = useState([]);
     const mediaRecorder = useRef(null);
     const [count, setCount] = useState(0)
+    const [newQuestion, setNewQuestion] = useState('Hey welcome to the interview could you please tell me about yourself and some of your experiences')
+    const [feedback, setFeedback] = useState('')
+    const [confidence, setConfidence] = useState(0)
+    const [knowledge, setKnowledge] = useState(0)
+    const [clarity, setClarity] = useState(0)
+
 
     const startRecording = () => {
         setRecordedChunks([]);
@@ -50,6 +57,7 @@ const AudioPlayer = () => {
         formData.append('job', 'Software Engineer')
 
 
+
         fetch('http://localhost:5000/send-audio', {
             method: 'POST', 
             body: formData
@@ -63,13 +71,23 @@ const AudioPlayer = () => {
             return response.json();
             
         })
-        .then((data) => {
-            console.log(data.result)
+        .then(data => {
+            console.log('Response data:', data); // Check the structure of the response
+            const { next_question, feedback, confidence, knowledge, clarity } = data.result;
+            setNewQuestion(next_question);
+            setFeedback(feedback);
+            setConfidence(confidence);
+            setKnowledge(knowledge);
+            setClarity(clarity);
         })
         .catch(error => {
             console.error('Error sending audio to the server: ', error);
         })
+    
+
+
     }
+
 
   return (
    <div>
@@ -81,11 +99,7 @@ const AudioPlayer = () => {
         <button onClick={handleSendToBackend}>Send</button>
         </>
     )}
-
-    <div>
-        <h1>{}</h1>
-        <p>{}</p>
-    </div>
+    <ShownData question={newQuestion} feedback={feedback} confidence={confidence} knowledge={knowledge} clarity={clarity} />
    </div>
   )
 }

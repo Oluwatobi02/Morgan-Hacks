@@ -19,11 +19,12 @@ import './Select.css'
         })
 
     }, [])
+
   return (
     <div className='container'>
         <h1 className='Opener'>Lets Generate your Roadmap!</h1>
         <p className='subtext'>Pick your major</p>
-        <div className='Majors'> 
+        <div className='Majors'>
         {majors.map((major, index) => (
             <motion.button
             
@@ -31,6 +32,7 @@ import './Select.css'
             initial={{ y: -100, opacity: 0 }}
             animate={{y:0, opacity:1}}
             transition={{ duration: 1, delay: index ===0 ? 0 : index/4}}
+            onClick={() => handleClick()}
              
             className='major'>{major.major}</motion.button>
         ))}     

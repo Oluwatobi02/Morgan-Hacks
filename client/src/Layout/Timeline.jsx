@@ -1,6 +1,7 @@
 import React from 'react';
 import './Timeline.css'; // Import your CSS file for styling
 import {motion} from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Timeline = () => {
   return (
@@ -48,7 +49,9 @@ const Timeline = () => {
 
         
     </motion.div>
+    <Link to={'/interview'}>
     <button className='btn'>Interview</button>
+    </Link>
     </div>
     </>
   );

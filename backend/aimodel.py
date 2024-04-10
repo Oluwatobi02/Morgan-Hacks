@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 def generate_advice(question):    
 
 
@@ -73,7 +73,9 @@ def get_next_question(major, job, text):
         ],
         functions=interview_question,
     )
-    return response.choices[0].message.content
+    # Assuming response contains the ChatCompletion object
+    return response.choices[0].message.function_call.arguments
+
 
 
 

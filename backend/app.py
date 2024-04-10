@@ -22,10 +22,11 @@ def send_audio():
     job = request.form['job']
     print(job)
     audio_file_name = audio.filename
-    file_name = f"./{audio_file_name}"
+    file_name = audio_file_name
     print(file_name)
     audio.save(file_name)
     text = generate_text(file_name)
+    print(text)
     airesponse = get_next_question(major, job, text)
     print(airesponse)
     return jsonify({'result': airesponse})
@@ -35,6 +36,7 @@ def send_audio():
 @app.route('/advice', methods=['POST'])
 def get_advice():
     question = request.json['question']
+    print(question)
     advice = generate_advice(question)
     return jsonify({'result': advice})
 

@@ -36,6 +36,7 @@ const Chat = () => {
         })
         .then(response => response.json())
         .then((data) => {
+            console.log(data.result)
             setShowResponse(true)
             setChat(data.result)
             setShowNext(true)
